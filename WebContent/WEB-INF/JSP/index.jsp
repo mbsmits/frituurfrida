@@ -18,7 +18,7 @@
 </c:import>
 </head>
 <body>
-	<h1>Frituur Frida</h1>
+	<h1>Frituur Frida!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
 	<h2>Vandaag zij we ${openGesloten}.</h2>
 	<img
 		src="images/${openGesloten}.png"
