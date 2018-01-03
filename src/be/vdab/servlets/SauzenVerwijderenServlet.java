@@ -15,9 +15,10 @@ import be.vdab.repositories.SausRepository;
 @WebServlet("/sauzen/verwijderen.htm")
 public class SauzenVerwijderenServlet extends HttpServlet {
 	
-	private static final long		serialVersionUID	= 1L;
-	private static final String		REDIRECT_URL		= "/sauzen.htm";
-	private final SausRepository	sausRepository		= new SausRepository();
+	private static final long	serialVersionUID	= 1L;
+	private static final String	REDIRECT_URL		= "/sauzen.htm";
+	
+	private final SausRepository sausRepository = new SausRepository();
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
