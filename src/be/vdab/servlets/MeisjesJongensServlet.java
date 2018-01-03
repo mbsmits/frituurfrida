@@ -12,10 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/meisjesjongens.htm")
 public class MeisjesJongensServlet extends HttpServlet {
 	
-	private static final long	serialVersionUID	= 1L;
-	private static final String	VIEW				= "/WEB-INF/JSP/meisjesjongens.jsp";
-	
-	private static final String REDIRECT_URL = "/meisjesjongens.htm";
+	private static final long	serialVersionUID		= 1L;
+	private static final String	VIEW					= "/WEB-INF/JSP/meisjesjongens.jsp";
+	private static final int	COOKIE_MAXIMUM_LEEFTIJD	= 60 /* seconden */ * 30 /* minuten */;
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,11 +26,11 @@ public class MeisjesJongensServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		String value = request.getParameter("meisjesjongens");
-		Cookie cookie = new Cookie("meisjesjongens", value);
-		cookie.setMaxAge(30 * 60);
+		String meisjesJongens = request.getParameter("meisjesjongens");
+		Cookie cookie = new Cookie("meisjesjongens", meisjesJongens);
+		cookie.setMaxAge(COOKIE_MAXIMUM_LEEFTIJD);
 		response.addCookie(cookie);
-		response.sendRedirect(request.getContextPath() + REDIRECT_URL);
+		response.sendRedirect(request.getRequestURI());
 	}
 	
 }
