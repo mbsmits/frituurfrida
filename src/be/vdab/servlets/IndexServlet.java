@@ -15,23 +15,23 @@ import be.vdab.entities.Gemeente;
 
 @WebServlet(urlPatterns = "/index.htm", name = "indexservlet")
 public class IndexServlet extends HttpServlet {
-
+	
 	private static final long serialVersionUID = 1L;
-
+	
 	private static final String VIEW = "/WEB-INF/JSP/index.jsp";
-
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		DayOfWeek dayOfWeek = LocalDateTime.now().getDayOfWeek();
 		switch (dayOfWeek) {
-		case MONDAY:
-		case THURSDAY:
-			request.setAttribute("openGesloten", "gesloten");
-			break;
-		default:
-			request.setAttribute("openGesloten", "open");
-			break;
+			case MONDAY:
+			case THURSDAY:
+				request.setAttribute("openGesloten", "gesloten");
+				break;
+			default:
+				request.setAttribute("openGesloten", "open");
+				break;
 		}
 		Gemeente gemeente = new Gemeente("Deurne", 2100);
 		Adres adres = new Adres("Loempialaan", "101", gemeente);
@@ -39,5 +39,5 @@ public class IndexServlet extends HttpServlet {
 		request.setAttribute("telefoonnummerHelpdesk", getServletContext().getInitParameter("telefoonnummerHelpdesk"));
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
-
+	
 }
