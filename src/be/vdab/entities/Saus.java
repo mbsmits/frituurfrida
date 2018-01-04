@@ -1,6 +1,7 @@
 package be.vdab.entities;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -14,6 +15,10 @@ public class Saus {
 		this.id = id;
 		this.naam = naam;
 		this.ingredienten.addAll(ingredienten);
+	}
+	
+	public Saus(long id, String naam, String ingredienten) {
+		this(id, naam, Arrays.asList(ingredienten.split(",")));
 	}
 	
 	public long getId() {
