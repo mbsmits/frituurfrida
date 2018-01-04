@@ -31,19 +31,16 @@ public final class RequestStatistiekListener implements ServletContextListener, 
 		if (event.getServletRequest() instanceof HttpServletRequest) {
 			HttpServletRequest request = (HttpServletRequest) event.getServletRequest();
 			String url = request.getRequestURI();
-			boolean match = UITGESLOTEN_EXTENSIES.stream().anyMatch(extensie -> url.endsWith("." + extensie));
-			
-			if (!match) {
+			boolean uitgesloten = UITGESLOTEN_EXTENSIES.stream().anyMatch(extensie -> url.endsWith("." + extensie));
+			if (!uitgesloten) {
 				@SuppressWarnings("unchecked")
-				Map<String, AtomicInteger> map = (Map<String, AtomicInteger>) event.getServletContext()
+				Map<String, AtomicInteger> statistiek = (Map<String, AtomicInteger>) event.getServletContext()
 						.getAttribute(STATISTIEK);
-				AtomicInteger aantal = map.get(url);
-				
+				statistiek.putIfAbsent(url, new AtomicInteger(0));
+				AtomicInteger aantal = statistiek.get(url);
 				aantal.incrementAndGet();
 			}
-			
 		}
-		
 	}
 	
 	@Override
