@@ -1,6 +1,7 @@
 <%@page contentType='text/html' pageEncoding='UTF-8'%>
 <%-- Op de vorige regel wordt session="false" niet vermeld --%>
 <%-- Zo komt session="true" (de default) --%>
+<%@taglib uri='http://vdab.be/tags' prefix='vdab'%>
 <%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
 <!doctype html>
 <html lang='nl'>
