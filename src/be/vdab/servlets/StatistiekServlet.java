@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/statistiek.htm")
 public class StatistiekServlet extends HttpServlet {
-	
-	private static final long	serialVersionUID	= 1L;
-	private static final String	VIEW				= "/WEB-INF/JSP/statistiek.jsp";
-	
+
+	private static final long serialVersionUID = 1L;
+	private static final String VIEW = "/WEB-INF/JSP/statistiek.jsp";
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

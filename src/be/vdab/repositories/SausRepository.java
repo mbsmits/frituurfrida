@@ -12,12 +12,12 @@ import java.util.Set;
 import be.vdab.entities.Saus;
 
 public class SausRepository extends AbstractRepository {
-	
-	private static final String	BEGIN_SELECT		= "select id, naam, ingredienten from sauzen ";
-	private static final String	FIND_ALL			= BEGIN_SELECT + "order by naam";
-	private static final String	FIND_BY_INGREDIENT	= BEGIN_SELECT + "where ingredienten like '%?%' order by naam";
-	private static final String	DELETE				= "delete from sauzen where id in ?";
-	
+
+	private static final String BEGIN_SELECT = "select id, naam, ingredienten from sauzen ";
+	private static final String FIND_ALL = BEGIN_SELECT + "order by naam";
+	private static final String FIND_BY_INGREDIENT = BEGIN_SELECT + "where ingredienten like '%?%' order by naam";
+	private static final String DELETE = "delete from sauzen where id in ?";
+
 	public List<Saus> findAll() {
 		try (Connection connection = dataSource.getConnection(); Statement statement = connection.createStatement()) {
 			List<Saus> sauzen = new ArrayList<>();
@@ -34,7 +34,7 @@ public class SausRepository extends AbstractRepository {
 			throw new RepositoryException(ex);
 		}
 	}
-	
+
 	public List<Saus> findByIngredient(String ingredient) {
 		try (Connection connection = dataSource.getConnection();
 				PreparedStatement statement = connection.prepareStatement(FIND_BY_INGREDIENT)) {
@@ -53,11 +53,11 @@ public class SausRepository extends AbstractRepository {
 			throw new RepositoryException(ex);
 		}
 	}
-	
+
 	private Saus resultSetRijNaarSaus(ResultSet resultSet) throws SQLException {
 		return new Saus(resultSet.getLong("id"), resultSet.getString("naam"), resultSet.getString("ingredienten"));
 	}
-	
+
 	public void delete(Set<Long> idStream) {
 		String temp = idStream.toString().replaceAll("[", "(").replaceAll("]", ")");
 		try (Connection connection = dataSource.getConnection();
@@ -71,5 +71,5 @@ public class SausRepository extends AbstractRepository {
 			throw new RepositoryException(ex);
 		}
 	}
-	
+
 }

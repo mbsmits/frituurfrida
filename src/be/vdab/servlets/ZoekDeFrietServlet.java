@@ -13,11 +13,11 @@ import be.vdab.entities.ZoekDeFrietSpel;
 
 @WebServlet("/zoekdefriet.htm")
 public class ZoekDeFrietServlet extends HttpServlet {
-	
-	private static final long	serialVersionUID	= 1L;
-	private static final String	VIEW				= "/WEB-INF/JSP/zoekdefriet.jsp";
-	private static final String	SPEL				= "zoekDeFrietSpel";
-	
+
+	private static final long serialVersionUID = 1L;
+	private static final String VIEW = "/WEB-INF/JSP/zoekdefriet.jsp";
+	private static final String SPEL = "zoekDeFrietSpel";
+
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class ZoekDeFrietServlet extends HttpServlet {
 		}
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
-	
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
