@@ -17,7 +17,7 @@
 <c:import url='head.jsp'>
 	<c:param
 		name='title'
-		value='Meisjes Jongens'
+		value='Meisjes-Jongens'
 	/>
 </c:import>
 </head>
