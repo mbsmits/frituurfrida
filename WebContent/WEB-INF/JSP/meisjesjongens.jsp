@@ -4,6 +4,10 @@
 	session='false'
 %>
 <%@taglib
+	uri='http://vdab.be/tags'
+	prefix='vdab'
+%>
+<%@taglib
 	prefix='c'
 	uri='http://java.sun.com/jsp/jstl/core'
 %>
@@ -18,7 +22,8 @@
 </c:import>
 </head>
 <body class='${cookie.meisjesjongens.value}'>
-	<h1>Meisjes Jongens</h1>
+	<vdab:menu />
+	<h1>Meisjes-Jongens</h1>
 	<form
 		method='post'
 		id='meisjesjongensform'

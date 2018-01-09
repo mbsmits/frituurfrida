@@ -54,3 +54,24 @@ input[type='checkbox'] {
 input:focus, textarea:focus, select:focus {
 	background-color: #FFFFD6
 }
+
+nav ul {
+	background-color: red;
+	padding: 0.4em 0;
+}
+
+nav li {
+	display: inline;
+}
+
+nav li a {
+	color: white;
+	font-weight: bold;
+	padding-left: 0.5em;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+nav li a:hover {
+	color: #F7FFCC;
+}

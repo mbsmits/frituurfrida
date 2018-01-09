@@ -4,6 +4,10 @@
 	session='false'
 %>
 <%@taglib
+	uri='http://vdab.be/tags'
+	prefix='vdab'
+%>
+<%@taglib
 	prefix='c'
 	uri='http://java.sun.com/jsp/jstl/core'
 %>
@@ -23,6 +27,7 @@ td:last-child {
 </style>
 </head>
 <body>
+	<vdab:menu />
 	<h1>Statistiek</h1>
 	<c:if test="${not empty statistiek}">
 		<table>
