@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/meisjesjongens.htm")
 public class MeisjesJongensServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-	private static final String VIEW = "/WEB-INF/JSP/meisjesjongens.jsp";
-	private static final int COOKIE_MAXIMUM_LEEFTIJD = 60 /* seconden */ * 30 /* minuten */;
-
+	
+	private static final long	serialVersionUID		= 1L;
+	private static final String	VIEW					= "/WEB-INF/JSP/meisjesjongens.jsp";
+	private static final int	COOKIE_MAXIMUM_LEEFTIJD	= 60 /* seconden */ * 30 /* minuten */;
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.getRequestDispatcher(VIEW).forward(request, response);
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -32,5 +32,5 @@ public class MeisjesJongensServlet extends HttpServlet {
 		response.addCookie(cookie);
 		response.sendRedirect(request.getRequestURI());
 	}
-
+	
 }

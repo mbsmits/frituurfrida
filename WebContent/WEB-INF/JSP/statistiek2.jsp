@@ -1,11 +1,24 @@
-<%@page contentType='text/html' pageEncoding='UTF-8' session='false'%>
-<%@taglib uri='http://vdab.be/tags' prefix='vdab'%>
-<%@taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%>
+<%@page
+	contentType='text/html'
+	pageEncoding='UTF-8'
+	session='false'
+%>
+<%@taglib
+	uri='http://vdab.be/tags'
+	prefix='vdab'
+%>
+<%@taglib
+	prefix='c'
+	uri='http://java.sun.com/jsp/jstl/core'
+%>
 <!doctype html>
 <html lang='nl'>
 <head>
 <c:import url='head.jsp'>
-	<c:param name='title' value='Statistiek2' />
+	<c:param
+		name='title'
+		value='Statistiek2'
+	/>
 </c:import>
 <style>
 td:last-child {
@@ -25,7 +38,10 @@ td:last-child {
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var='entry' items='${statistiek2}'>
+				<c:forEach
+					var='entry'
+					items='${statistiek2}'
+				>
 					<tr>
 						<td>${entry.key}</td>
 						<td>${entry.value}</td>

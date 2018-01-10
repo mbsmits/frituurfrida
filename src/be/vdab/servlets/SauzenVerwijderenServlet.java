@@ -16,17 +16,17 @@ import be.vdab.repositories.SausRepository;
 
 @WebServlet("/sauzen/verwijderen.htm")
 public class SauzenVerwijderenServlet extends HttpServlet {
-
-	private static final long serialVersionUID = 1L;
-	private static final String REDIRECT_URL = "/sauzen.htm";
-
+	
+	private static final long	serialVersionUID	= 1L;
+	private static final String	REDIRECT_URL		= "/sauzen.htm";
+	
 	private final transient SausRepository sausRepository = new SausRepository();
-
+	
 	@Resource(name = SausRepository.JNDI_NAME)
 	void setDataSource(DataSource dataSource) {
 		sausRepository.setDataSource(dataSource);
 	}
-
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

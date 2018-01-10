@@ -15,14 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 
 @WebFilter("*.htm")
 public class RequestStatistiek2Filter implements Filter {
-
+	
 	private static final String STATISTIEK2 = "statistiek2";
-
+	
 	@Override
 	public void init(FilterConfig config) throws ServletException {
 		config.getServletContext().setAttribute(STATISTIEK2, new ConcurrentHashMap<String, AtomicInteger>());
 	}
-
+	
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
@@ -41,10 +41,10 @@ public class RequestStatistiek2Filter implements Filter {
 		}
 		chain.doFilter(request, response);
 	}
-
+	
 	@Override
 	public void destroy() {
 		// Niets.
 	}
-
+	
 }
