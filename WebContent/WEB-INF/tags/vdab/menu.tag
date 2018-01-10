@@ -28,6 +28,9 @@
 				<a href="<c:url value='/zoekdefriet.htm'/>">Zoek de friet</a>
 			</li>
 			<li>
+				<a href="<c:url value='/gastenboek.htm'/>">Gastenboek</a>
+			</li>
+			<li>
 				<a href="<c:url value='/statistiek.htm'/>">Statistiek</a>
 			</li>
 			<li>

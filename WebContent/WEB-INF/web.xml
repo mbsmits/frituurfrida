@@ -10,4 +10,8 @@
 		<param-name>telefoonnummerHelpdesk</param-name>
 		<param-value>03 322 70 11</param-value>
 	</context-param>
+	<context-param> 
+	 	<param-name>paswoord</param-name>   
+		<param-value>bolle</param-value> 
+	</context-param>
 </web-app>

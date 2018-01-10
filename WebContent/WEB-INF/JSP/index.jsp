@@ -4,6 +4,10 @@
 	session='false'
 %>
 <%@taglib
+	uri='http://vdab.be/tags'
+	prefix='vdab'
+%>
+<%@taglib
 	prefix='c'
 	uri='http://java.sun.com/jsp/jstl/core'
 %>
@@ -27,6 +31,7 @@
 </c:import>
 </head>
 <body>
+	<vdab:menu />
 	<h1>
 		<fmt:message key='vandaagZijnWe${openGesloten}' />
 	</h1>
