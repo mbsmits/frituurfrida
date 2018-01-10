@@ -44,5 +44,10 @@
 	${adres.straat} ${adres.huisNr}
 	<br>
 	${adres.gemeente.postcode} ${adres.gemeente.naam}
+	<div>
+		<fmt:message key='helpdesk' />
+		:
+		<a href="tel:+${telefoonnummerHelpdesk.replace(' ','')}">${telefoonnummerHelpdesk}</a>
+	</div>
 </body>
 </html>
