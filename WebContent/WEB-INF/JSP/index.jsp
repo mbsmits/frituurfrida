@@ -4,36 +4,45 @@
 	session='false'
 %>
 <%@taglib
-	uri='http://vdab.be/tags'
-	prefix='vdab'
-%>
-<%@taglib
 	prefix='c'
 	uri='http://java.sun.com/jsp/jstl/core'
 %>
+<%@taglib
+	prefix='fmt'
+	uri='http://java.sun.com/jsp/jstl/fmt'
+%>
+<fmt:setBundle basename='resourceBundles.teksten' />
 <!doctype html>
-<html lang='nl'>
+<html>
 <head>
+<fmt:message
+	key='frituurFrida'
+	var='title'
+/>
 <c:import url='head.jsp'>
 	<c:param
 		name='title'
-		value='Frituur Frida'
+		value='${title}'
 	/>
 </c:import>
 </head>
 <body>
-	<vdab:menu />
-	<h1>Frituur Frida</h1>
-	<h2>Vandaag zij we ${openGesloten}.</h2>
+	<h1>
+		<fmt:message key='vandaagZijnWe${openGesloten}' />
+	</h1>
+	<fmt:message
+		key='afbeelding${openGesloten}'
+		var='afbeelding'
+	/>
 	<img
-		src="images/${openGesloten}.png"
-		alt="${openGesloten}"
+		src='<c:url value="/images/${afbeelding}.png"/>'
+		alt="<fmt:message key='${openGesloten}'/>"
 	>
-	<h2>${adres.straat}${adres.huisNr}${adres.gemeente.postcode}
-		${adres.gemeente.naam}</h2>
-	<div>
-		Helpdesk:
-		<a href="tel:+${telefoonnummerHelpdesk.replace(' ','')}">${telefoonnummerHelpdesk}</a>
-	</div>
+	<h2>
+		<fmt:message key='adres' />
+	</h2>
+	${adres.straat} ${adres.huisNr}
+	<br>
+	${adres.gemeente.postcode} ${adres.gemeente.naam}
 </body>
 </html>
